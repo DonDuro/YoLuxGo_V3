@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(43, 13%, 99%);
+  --foreground: hsl(206, 24%, 23%);
+  --muted: hsl(43, 13%, 96%);
+  --muted-foreground: hsl(206, 24%, 45%);
+  --popover: hsl(43, 13%, 99%);
+  --popover-foreground: hsl(206, 24%, 23%);
+  --card: hsl(43, 13%, 99%);
+  --card-foreground: hsl(206, 24%, 23%);
+  --border: hsl(43, 13%, 90%);
+  --input: hsl(43, 13%, 90%);
+  --primary: hsl(47, 73%, 52%);
+  --primary-foreground: hsl(206, 50%, 12%);
+  --secondary: hsl(43, 13%, 96%);
+  --secondary-foreground: hsl(206, 24%, 23%);
+  --accent: hsl(43, 13%, 96%);
+  --accent-foreground: hsl(206, 24%, 23%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(43, 13%, 99%);
+  --ring: hsl(206, 24%, 23%);
+  --radius: 0rem;
+  
+  /* YoLuxGo Brand Colors */
+  --navy: hsl(214, 65%, 11%);
+  --gold: hsl(47, 73%, 52%);
+  --charcoal: hsl(0, 0%, 23%);
+  --cream: hsl(43, 13%, 99%);
+}
+
+.dark {
+  --background: hsl(214, 65%, 11%);
+  --foreground: hsl(43, 13%, 99%);
+  --muted: hsl(214, 32%, 16%);
+  --muted-foreground: hsl(214, 16%, 65%);
+  --popover: hsl(214, 65%, 11%);
+  --popover-foreground: hsl(43, 13%, 99%);
+  --card: hsl(214, 65%, 11%);
+  --card-foreground: hsl(43, 13%, 99%);
+  --border: hsl(214, 32%, 16%);
+  --input: hsl(214, 32%, 16%);
+  --primary: hsl(47, 73%, 52%);
+  --primary-foreground: hsl(206, 50%, 12%);
+  --secondary: hsl(214, 32%, 16%);
+  --secondary-foreground: hsl(43, 13%, 99%);
+  --accent: hsl(214, 32%, 16%);
+  --accent-foreground: hsl(43, 13%, 99%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(43, 13%, 99%);
+  --ring: hsl(214, 16%, 84%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(214, 65%, 5%) 0%, hsl(214, 60%, 12%) 100%);
+  }
+  
+  .gold-shimmer {
+    background: linear-gradient(45deg, hsl(47, 73%, 52%), hsl(47, 80%, 65%), hsl(47, 73%, 52%));
+    background-size: 200% 200%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  
+  .animate-float-delayed-2 {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 4s;
+  }
+}
+
+@layer utilities {
+  .text-navy {
+    color: hsl(214, 65%, 11%);
+  }
+  
+  .text-gold {
+    color: hsl(47, 73%, 52%);
+  }
+  
+  .text-charcoal {
+    color: hsl(0, 0%, 23%);
+  }
+  
+  .text-cream {
+    color: hsl(43, 13%, 99%);
+  }
+  
+  .bg-navy {
+    background-color: hsl(214, 65%, 11%);
+  }
+  
+  .bg-gold {
+    background-color: hsl(47, 73%, 52%);
+  }
+  
+  .bg-charcoal {
+    background-color: hsl(0, 0%, 23%);
+  }
+  
+  .bg-cream {
+    background-color: hsl(43, 13%, 99%);
+  }
+  
+  .border-navy {
+    border-color: hsl(214, 65%, 11%);
+  }
+  
+  .border-gold {
+    border-color: hsl(47, 73%, 52%);
+  }
+  
+  .hover\:bg-navy:hover {
+    background-color: hsl(214, 65%, 11%);
+  }
+  
+  .hover\:bg-gold:hover {
+    background-color: hsl(47, 73%, 52%);
+  }
+  
+  .hover\:text-gold:hover {
+    color: hsl(47, 73%, 52%);
+  }
+  
+  .hover\:text-navy:hover {
+    color: hsl(214, 65%, 11%);
+  }
+  
+  .hover\:text-cream:hover {
+    color: hsl(43, 13%, 99%);
+  }
+}
