@@ -1,0 +1,55 @@
+{
+  "name": "YoLuxGo Platform",
+  "description": "YoLuxGo™ - Discreet Luxury Transportation Platform powered by Nebusis®",
+  "keywords": [
+    "luxury",
+    "transportation", 
+    "security",
+    "concierge",
+    "executive-protection"
+  ],
+  "website": "https://www.yoluxgo.com",
+  "repository": "https://github.com/nebusis/yoluxgo-platform",
+  "logo": "https://www.yoluxgo.com/logo.png",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "npm run db:push"
+  },
+  "env": {
+    "NODE_ENV": {
+      "description": "Node.js environment",
+      "value": "production"
+    },
+    "SESSION_SECRET": {
+      "description": "Secret key for JWT signing (minimum 32 characters)",
+      "generator": "secret"
+    },
+    "STRIPE_SECRET_KEY": {
+      "description": "Stripe secret key for payment processing"
+    },
+    "VITE_STRIPE_PUBLIC_KEY": {
+      "description": "Stripe publishable key for frontend"
+    },
+    "SENDGRID_API_KEY": {
+      "description": "SendGrid API key for email services"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:basic",
+      "as": "DATABASE"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-22",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
